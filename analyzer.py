@@ -1,5 +1,5 @@
 import random
-
+import sorting_algorithms
 
 # def create_random_list(size, max_val):
 #    ran_list = []
@@ -10,4 +10,8 @@ import random
 def create_random_list(size, max_val):
     return [random.randint(1,max_val) for num in range(size)]
 
-print(create_random_list(100,100))
+
+size = input("Enter size of list: ")
+max_val = input("Enter max value of range: ")
+
+print(create_random_list(size,max_val))
