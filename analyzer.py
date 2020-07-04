@@ -16,12 +16,17 @@ def analyze(func_name, arr):
     func_name(arr)
     end_time = time.time()
     seconds = end_time-start_time
-    print(f"{func_name.__name__.capitalize()}\t Elapsed time: {seconds}")
+    print(f"{func_name.__name__.capitalize()}\t-> Elapsed time: {seconds:.5f}")
 
 size = int(input("Enter size of list: "))
 max_val = int(input("Enter max value of range: "))
+run_times = int(input("Enter number of times to run: "))
 
-l = create_random_list(size,max_val)
-analyze(quicksort,l)
-analyze(mergesort,l)
-analyze(bubblesort,l.copy())
+for num in range(run_times):
+    print(f"Run: {num+1}")
+    l = create_random_list(size,max_val)
+    analyze(quicksort,l)
+    analyze(mergesort,l)
+    analyze(bubblesort,l.copy())
+    analyze(sorted,l)
+    print("-" * 40)
