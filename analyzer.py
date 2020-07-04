@@ -1,5 +1,6 @@
 import random
-import sorting_algorithms
+import time
+from sorting_algorithms import quicksort, mergesort, bubblesort
 
 # def create_random_list(size, max_val):
 #    ran_list = []
@@ -10,8 +11,17 @@ import sorting_algorithms
 def create_random_list(size, max_val):
     return [random.randint(1,max_val) for num in range(size)]
 
+def analyze(func_name, arr):
+    start_time = time.time()
+    func_name(arr)
+    end_time = time.time()
+    seconds = end_time-start_time
+    print(f"{func_name.__name__} Elapsed time -> {seconds}")
 
-size = input("Enter size of list: ")
-max_val = input("Enter max value of range: ")
+size = int(input("Enter size of list: "))
+max_val = int(input("Enter max value of range: "))
 
-print(create_random_list(size,max_val))
+l = create_random_list(size,max_val)
+analyze(quicksort,l)
+analyze(mergesort,l)
+analyze(bubblesort,l)
