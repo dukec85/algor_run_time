@@ -16,7 +16,7 @@ def analyze(func_name, arr):
     func_name(arr)
     end_time = time.time()
     seconds = end_time-start_time
-    print(f"{func_name.__name__} Elapsed time -> {seconds}")
+    print(f"{func_name.__name__.capitalize()}\t Elapsed time: {seconds}")
 
 size = int(input("Enter size of list: "))
 max_val = int(input("Enter max value of range: "))
@@ -24,4 +24,4 @@ max_val = int(input("Enter max value of range: "))
 l = create_random_list(size,max_val)
 analyze(quicksort,l)
 analyze(mergesort,l)
-analyze(bubblesort,l)
+analyze(bubblesort,l.copy())
