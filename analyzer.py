@@ -1,6 +1,6 @@
 import random
 import time
-from sorting_algorithms import quicksort, mergesort, bubblesort
+from sorting_algorithms import quicksort, mergesort, radix_sort, bubblesort
 
 # def create_random_list(size, max_val):
 #    ran_list = []
@@ -28,5 +28,6 @@ for num in range(run_times):
     analyze(quicksort,l)
     analyze(mergesort,l)
     analyze(bubblesort,l.copy())
+    analyze(radix_sort,l)
     analyze(sorted,l)
     print("-" * 40)
